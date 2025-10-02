@@ -1,0 +1,4 @@
+samples: "samples.tsv"
+genome: "refGenomeDir/hg19.fa"
+outdir: "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results"
+hdf5: "HMEC_repliseq.h5"

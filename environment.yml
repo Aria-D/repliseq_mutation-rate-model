@@ -1,0 +1,15 @@
+name: repliseq_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - snakemake
+  - pandas
+  - numpy
+  - h5py
+  - pyfaidx
+  - matplotlib    # optional
+  - seaborn       # optional
+  - scipy         # optional
