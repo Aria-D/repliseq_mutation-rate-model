@@ -46,3 +46,9 @@ hdf5: "HMEC_repliseq.h5"
 - `samples.tsv` contains your sample metadata and FASTQ paths.
 
 - `genome.fa` is the reference genome FASTA.
+
+Make sure your genome file has an index built for bwa mem. If it does not, in the same directory as the reference genome run:
+
+```bash
+bwa index {your_genome_file.fa}
+```
