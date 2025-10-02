@@ -8,16 +8,12 @@
 #SBATCH --partition=scu-cpu     # change if needed
 
 # Load modules (if needed)
-module load anaconda3
 module load bwa
 module load samtools
 module load bedtools
 
 # Activate conda environment with snakemake + python packages
-source activate repliseq_env
-
-# Go to project directory
-cd /path/to/project_root
+conda activate repliseq_env
 
 # Make logs folder if not exists
 mkdir -p logs
