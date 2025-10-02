@@ -1,0 +1,16 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+WorkflowError:
+MissingInputException: Missing input files for rule align:
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered.bam
+    wildcards: sample=fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered
+    affected files:
+        /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered_R2.trim.fastq.gz
+        /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered_R1.trim.fastq.gz
+MissingInputException: Missing input files for rule align:
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.bam
+    wildcards: sample=fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz
+    affected files:
+        /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz_R2.trim.fastq.gz
+        /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz_R1.trim.fastq.gz

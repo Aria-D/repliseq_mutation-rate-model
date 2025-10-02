@@ -1,0 +1,136 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+align                3
+all                  1
+coverage             3
+filter_bam           3
+merge_to_hdf5        1
+trim                 3
+total               14
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver, falling back to greedy scheduler. You likely have to fix your ILP solver installation. Error message: PULP_CBC_CMD: Not Available (check permissions on cbc)
+Execute 3 jobs...
+[Thu Oct  2 15:12:14 2025]
+localrule trim:
+    input: fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz
+    jobid: 9
+    reason: Missing output files: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz
+    wildcards: sample=SRR28552525_Late
+    resources: tmpdir=/tmp
+Shell command: 
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+        
+[Thu Oct  2 15:12:15 2025]
+localrule trim:
+    input: fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz
+    jobid: 5
+    reason: Missing output files: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz
+    wildcards: sample=SRR28552528_G1
+    resources: tmpdir=/tmp
+Shell command: 
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+        
+RuleException:
+CalledProcessError in file "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 47:
+Command 'set -euo pipefail;  
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz' returned non-zero exit status 127.
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 9
+    input: fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 47:
+Command 'set -euo pipefail;  
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz' returned non-zero exit status 127.
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 5
+    input: fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Thu Oct  2 15:12:15 2025]
+localrule trim:
+    input: fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz
+    jobid: 13
+    reason: Missing output files: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz
+    wildcards: sample=SRR28552526_Early
+    resources: tmpdir=/tmp
+Shell command: 
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+        
+RuleException:
+CalledProcessError in file "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 47:
+Command 'set -euo pipefail;  
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz' returned non-zero exit status 127.
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 13
+    input: fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 9
+    input: fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 13
+    input: fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552526_Early_R2.trim.fastq.gz fastq_dir/SRR28552526_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552526_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Thu Oct  2 15:12:15 2025]
+Error in rule trim:
+    message: None
+    jobid: 5
+    input: fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz, fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz
+    shell:
+        
+        cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC         -o /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R1.trim.fastq.gz -p /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1_R2.trim.fastq.gz fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz fastq_dir/SRR28552528_S1_L001_R3_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+Complete log(s): /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/.snakemake/log/2025-10-02T151213.869698.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

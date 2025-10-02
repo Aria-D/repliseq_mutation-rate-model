@@ -1,0 +1,16 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+WorkflowError:
+InputFunctionException (rule trim, line 48, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      ValueError: Sample fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered not found in samples.tsv
+    Wildcards:
+      sample=fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz.filtered
+    Traceback:
+      File "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 36, in get_fastqs (rule trim, line 48, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)
+InputFunctionException (rule trim, line 48, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      Function did not return str or iterable of str. Encountered: [nan, nan] (<class 'list'>)
+    Wildcards:
+      sample=fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz (rule trim, line 48, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)

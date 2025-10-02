@@ -22,18 +22,31 @@ rule all:
 # load sample sheet
 samples = pd.read_csv(SAMPLES, sep="\t")
 
+import pandas as pd
+
+samples = pd.read_csv("samples.tsv", sep="\t")
+samples["Sample"] = samples["Sample"].str.strip()
+samples["FQ1"] = samples["FQ1"].str.strip()
+samples["FQ2"] = samples["FQ2"].str.strip()
+
+def get_fastqs(wildcards):
+    row = samples.loc[samples["Sample"] == wildcards.sample]
+    print(row)
+    if row.empty:
+        raise ValueError(f"Sample {wildcards.sample} not found in samples.tsv")
+    print([row["FQ1"].values[0], row["FQ2"].values[0]])
+    return [row["FQ1"].values[0], row["FQ2"].values[0]]
+
+
 rule trim:
-    input:
-        fq1=lambda wildcards: samples.loc[samples.Sample==wildcards.sample, "FQ1"].values[0],
-        fq2=lambda wildcards: samples.loc[samples.Sample==wildcards.sample, "FQ2"].values[0]
+    input: get_fastqs
     output:
-        r1=os.path.join(OUTDIR, "{sample}_R1.trim.fastq.gz"),
-        r2=os.path.join(OUTDIR, "{sample}_R2.trim.fastq.gz")
-    threads: 4
+        R1=os.path.join(OUTDIR, "{sample}_R1.trim.fastq.gz"),
+        R2=os.path.join(OUTDIR, "{sample}_R2.trim.fastq.gz")
     shell:
         """
         cutadapt -q 0 -O 1 -m 0 -a AGATCGGAAGAGC -A AGATCGGAAGAGC \
-            -o {output.r1} -p {output.r2} {input.fq1} {input.fq2}
+        -o {output.R1} -p {output.R2} {input[0]} {input[1]}
         """
 
 rule align:

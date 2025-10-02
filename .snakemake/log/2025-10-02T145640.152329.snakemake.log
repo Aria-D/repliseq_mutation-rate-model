@@ -1,0 +1,16 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+WorkflowError:
+InputFunctionException (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      IndexError: index 0 is out of bounds for axis 0 with size 0
+    Wildcards:
+      sample=SRR28552528_G1  .filtered
+    Traceback:
+      File "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 27, in <lambda> (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)
+InputFunctionException (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      Function did not return str or iterable of str. Encountered: [nan] (<class 'list'>)
+    Wildcards:
+      sample=SRR28552528_G1   (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)

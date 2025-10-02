@@ -1,1 +1,5 @@
+.gitignore
 refGenome_dir/
+logs/
+fastq_dir/
+

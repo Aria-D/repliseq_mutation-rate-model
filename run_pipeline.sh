@@ -8,9 +8,11 @@
 #SBATCH --partition=scu-cpu     # change if needed
 
 # Load modules (if needed)
+source ~/.bashrc
 module load bwa
 module load samtools
 module load bedtools
+module load cutadapt
 
 # Activate conda environment with snakemake + python packages
 conda activate repliseq_env
@@ -24,7 +26,7 @@ echo "[INFO] Starting Repli-seq Snakemake pipeline on $(date)"
 snakemake \
     --snakefile Snakefile \
     --configfile config.yaml \
-    --cores $SLURM_CPUS_PER_TASK \
+    --cores 8 \
     --use-conda \
     --rerun-incomplete \
     --printshellcmds \

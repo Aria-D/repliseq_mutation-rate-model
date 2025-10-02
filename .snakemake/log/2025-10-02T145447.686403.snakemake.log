@@ -1,0 +1,17 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+File path 'fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz   ' ends with whitespace. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+WorkflowError:
+InputFunctionException (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      IndexError: index 0 is out of bounds for axis 0 with size 0
+    Wildcards:
+      sample=SRR28552528_G1  .filtered
+    Traceback:
+      File "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 27, in <lambda> (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)
+MissingInputException: Missing input files for rule trim:
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1  _R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552528_G1  _R2.trim.fastq.gz
+    wildcards: sample=SRR28552528_G1  
+    affected files:
+        fastq_dir/SRR28552528_S1_L001_R1_001.fastq.gz   

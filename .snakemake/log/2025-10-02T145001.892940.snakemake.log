@@ -1,0 +1,19 @@
+Assuming unrestricted shared filesystem usage.
+host: cayuga-login1
+Building DAG of jobs...
+Relative file path './fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+WorkflowError:
+MissingInputException: Missing input files for rule trim:
+    output: /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R1.trim.fastq.gz, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/aux_files/sra_repliseq_data/results/SRR28552525_Late_R2.trim.fastq.gz
+    wildcards: sample=SRR28552525_Late
+    affected files:
+        ./fastq_dir/SRR28552525_S1_L001_R3_001.fastq.gz
+        ./fastq_dir/SRR28552525_S1_L001_R1_001.fastq.gz
+InputFunctionException (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile):
+    Error:
+      IndexError: index 0 is out of bounds for axis 0 with size 0
+    Wildcards:
+      sample=SRR28552525_Late.filtered
+    Traceback:
+      File "/athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile", line 27, in <lambda> (rule trim, line 32, /athena/cayuga_0040/scratch/ard4008/projects/hartwig/src/mutation_rate_rf_model/tools/custom_RepliSeq_analysis/Snakefile)
