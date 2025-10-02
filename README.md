@@ -50,5 +50,7 @@ hdf5: "HMEC_repliseq.h5"
 Make sure your genome file has an index built for bwa mem. If it does not, in the same directory as the reference genome run:
 
 ```bash
-bwa index {your_genome_file.fa}
+bwa index {/full/path/to/your_genome_file.fa}
 ```
+
+Make sure you include the full path (`realpath`) to your directory that has your genome file!
