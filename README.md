@@ -8,12 +8,14 @@ This repository contains a Snakemake workflow to process Repli-seq data for HMEC
 
 ## Project Structure
 
+```markdown
 project_root/
 ├── Snakefile
 ├── merge_repliseq_to_hdf5.py
 ├── config.yaml
 ├── samples.tsv
 └── environment.yml
+```
 ---
 
 ## Installation
@@ -23,9 +25,24 @@ Create the conda environment:
 ```bash
 conda env create -f environment.yml
 conda activate repliseq_env
+```
 
 Ensure proper modules are loaded (if running on Slurm cluster):
 
 ```bash
 module load bwa samtools bedtools
+```
 
+Configuration:
+
+Edit the `config.yaml` file with the appropriate paths:
+
+```yaml
+samples: "samples.tsv"
+genome: "genome.fa"
+outdir: "results"
+hdf5: "HMEC_repliseq.h5"
+```
+- `samples.tsv` contains your sample metadata and FASTQ paths.
+
+- `genome.fa` is the reference genome FASTA.
