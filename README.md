@@ -40,6 +40,7 @@ Edit the `config.yaml` file with the appropriate paths:
 ```yaml
 samples: "samples.tsv"
 genome: "genome.fa"
+chrom_sizes: "genome.chrom.sizes"
 outdir: "results"
 hdf5: "HMEC_repliseq.h5"
 ```
